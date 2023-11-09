@@ -1,0 +1,19 @@
+:root {
+  /* Screen scaling variables */
+  --standard-width: 600;
+  --standard-height: 400;
+  --scaling-factor: calc(100vh / var(--standard-height)); 
+  --content-width: calc(var(--standard-width) * var(--scaling-factor));
+  --content-height: calc(var(--standard-height) * var(--scaling-factor));
+
+  /* Spacing variables */
+  --space-xsmall: calc(2 * var(--scaling-factor));
+  --space-small: calc(4 * var(--scaling-factor));
+  --space-medium: calc(8 * var(--scaling-factor));
+  --space-large: calc(16 * var(--scaling-factor));
+  --space-xlarge: calc(32 * var(--scaling-factor));
+
+  /* Colors */
+  --color-background: #9C95DC;
+  --color-foreground-0: #228CDB;
+}

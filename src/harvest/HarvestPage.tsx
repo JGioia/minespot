@@ -1,4 +1,3 @@
-import React, {useState} from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { setMoney, setWorkers } from '../redux/reducer';
 import { IRootState } from "../redux/store";

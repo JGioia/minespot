@@ -1,5 +1,3 @@
-import React from 'react';
-
 import './Overlay.css'
 import PageButton from './PageButton';
 

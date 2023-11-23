@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { IRootState } from "../redux/store";
 import { useCallback, useEffect, useRef } from 'react';
-import { incrementTime, setMoney, setWorkers } from '../redux/reducer';
+import { incrementTime, setMoney } from '../redux/reducer';
 
 const TICK_LENGTH = 0.1;
 

@@ -1,12 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counter from './counter'
+import rootReducer from './reducer'
 import storage from 'redux-persist/lib/storage';
 import { persistReducer, persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';
-
-import { combineReducers } from 'redux';
-
-const rootReducer = combineReducers({money: counter});
 
 const persistConfig = {
   key: 'root',

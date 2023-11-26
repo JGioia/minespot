@@ -1,0 +1,14 @@
+@import '../variables.css';
+
+.overlay {
+  margin: var(--space-medium);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-medium);
+}
+
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

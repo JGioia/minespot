@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { IRootState } from "../redux/store";
 import { useCallback, useEffect, useRef } from 'react';
-import { incrementTime, setMoney } from '../redux/reducer';
+import { incrementTime } from '../redux/reducer';
+import { work } from './work';
 
 const TICK_LENGTH = 0.1;
 
@@ -22,8 +23,7 @@ const startWorking =
 
 const useWork = () => {
   const dispatch = useDispatch();
-  const workers = useSelector((state: IRootState) => state.workers);
-  const money = useSelector((state: IRootState) => state.money);
+  const state = useSelector((state: IRootState) => state);
   const prevTime = useSelector((state: IRootState) => state.prevTime);
   const curTime = useSelector((state: IRootState) => state.curTime);
 
@@ -34,12 +34,10 @@ const useWork = () => {
   useEffect(() => {
     doWork.current = () => {
       const deltaTime = curTime - prevTime;
-      const deltaMoney = workers * deltaTime;
-      
-      dispatch(setMoney(money + deltaMoney));
+      work(dispatch, state, deltaTime);
       return undefined;
     };
-  }, [dispatch, workers, money, prevTime, curTime]);
+  }, [dispatch, state, prevTime, curTime]);
 
   useEffect(() => {
     doWork.current();

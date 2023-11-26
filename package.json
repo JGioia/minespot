@@ -1,6 +1,6 @@
 {
   "name": "minespot",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",

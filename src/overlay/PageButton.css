@@ -1,0 +1,25 @@
+@import '../variables.css';
+
+:root {
+  --half-width: calc(var(--content-width) / 2);
+  --half-height: calc(var(--content-height) / 2);
+}
+
+.page-button {
+  position: absolute;
+}
+
+.left {
+  margin-top: var(--half-height);
+}
+.up {
+  margin-left: var(--half-width);
+}
+.right {
+  margin-top: var(--half-height);
+  margin-left: var(--content-width);
+}
+.down {
+  margin-top: var(--content-height);
+  margin-left: var(--half-width);
+}

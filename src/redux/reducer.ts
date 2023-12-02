@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+type Page = 'harvest' | 'craft' | 'gamble' | 'quest' | 'stock';
+
 const initialState = {
   earthCheese: 0,
   money: 0,
@@ -7,6 +9,7 @@ const initialState = {
   prevTime: 0, // in seconds
   curTime: 0, // in seconds
   tick: 0,
+  page: ('harvest' as Page),
 };
 
 export const reducerSlice = createSlice({
@@ -28,7 +31,10 @@ export const reducerSlice = createSlice({
       state.workers = action.payload;
     },
     setEarthCheese: (state, action) => {
-      state.earthCheese = action.payload
+      state.earthCheese = action.payload;
+    },
+    setPage: (state, action) => {
+      state.page = action.payload;
     },
     incrementTime: (state, action) => {
       const deltaTime = action.payload;
@@ -46,7 +52,8 @@ export const {
   setMoney, 
   setWorkers, 
   incrementTime,
-  setEarthCheese
+  setEarthCheese,
+  setPage
 } = reducerSlice.actions
 
 export default reducerSlice.reducer

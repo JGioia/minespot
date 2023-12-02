@@ -27,16 +27,16 @@ export const Overlay =
     ({children}: {children: ReactElement}) => {
   return (
     <>
+      <PageButton direction="left" />
+      <PageButton direction='right' />
+      <PageButton direction='up' />
+      <PageButton direction='down' />
       <div className='overlay'>
         <TopBar />
         <div>
           {children}
         </div>
       </div>
-      <PageButton direction="left" />
-      <PageButton direction='right' />
-      <PageButton direction='up' />
-      <PageButton direction='down' />
     </>
   )
 };

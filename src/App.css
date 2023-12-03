@@ -6,6 +6,10 @@
   height: 100vh;
   display: flex;
   justify-content: center;
+  font-family: "Bubblegum Sans", sans-serif;
+  color: #FFFFFF;
+  font-size: var(--space-medium);
+  font-weight: 500;
 }
 
 .content {

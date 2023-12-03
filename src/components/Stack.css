@@ -1,0 +1,26 @@
+@import '../variables.css';
+
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.gap-xsmall {
+  gap: var(--space-xsmall);
+}
+
+.gap-small {
+  gap: var(--space-small);
+}
+
+.gap-medium {
+  gap: var(--space-medium);
+}
+
+.gap-large {
+  gap: var(--space-large);
+}
+
+.gap-xlarge {
+  gap: var(--space-xlarge);
+}

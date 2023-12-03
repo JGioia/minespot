@@ -4,6 +4,9 @@ import { IRootState } from "../redux/store";
 
 import './HarvestPage.css';
 import { Quantity } from '../components/Quantity';
+import { useCallback, useMemo } from 'react';
+import { Button } from '../components/Button';
+import { Stack } from '../components/Stack';
 
 export const HarvestPage = () => {
   const money = useSelector((state: IRootState) => state.money);
@@ -11,26 +14,38 @@ export const HarvestPage = () => {
   const earthCheese = useSelector((state: IRootState) => state.earthCheese);
   const dispatch = useDispatch();
 
-  const clickCookie = () => dispatch(setMoney(money + 1));
-  const hireWorker = () => dispatch(setWorkers(workers + 1));
-  const fireWorker = () => dispatch(setWorkers(workers - 1));
-  const sellCheese = () => {
-    dispatch(setMoney(money + earthCheese));
+  const nextWorkerCost = useMemo(() => (workers + 2) * 3, [workers]);
+  const sellCheesePrice = 2;
+
+  const clickCookie = useCallback(
+    () => dispatch(setEarthCheese(earthCheese + 1)), 
+    [dispatch, money]
+  );
+  const hireWorker = useCallback(() => {
+    dispatch(setWorkers(workers + 1));
+    dispatch(setMoney(money - nextWorkerCost));
+  }, [dispatch, workers, money, nextWorkerCost]);
+  const sellCheese = useCallback(() => {
+    dispatch(setMoney(money + earthCheese * sellCheesePrice));
     dispatch(setEarthCheese(0));
-  };
-  const restartGame = () => dispatch(resetState());
+  }, [dispatch, money, earthCheese, sellCheesePrice]);
+  const restartGame = useCallback(
+    () => dispatch(resetState()),
+    [dispatch]
+  );
 
   return (
     <div className='harvest-page'>
-      <button onClick={clickCookie}>Click cookie</button>
-      <button onClick={hireWorker}>Hire Worker</button>
-      <button onClick={fireWorker}>Fire Worker</button>
-      <button onClick={sellCheese}>Sell Cheese</button>
-      <button onClick={restartGame}>Reset</button>
-      <span>
-        <span>workers: </span>
-        <Quantity value={workers} />
-      </span>
+      <Stack>
+        <Button onClick={clickCookie}>🧀</Button>
+        <Button onClick={hireWorker}>Hire 🐀 - ${nextWorkerCost}</Button>
+        <span>
+          <span>workers: </span>
+          <Quantity value={workers} />
+        </span>
+        <Button onClick={sellCheese}>Sell 🧀 - ${sellCheesePrice} / cheese</Button>
+        <Button onClick={restartGame}>Reset</Button>
+      </Stack>
     </div>
   )
 };

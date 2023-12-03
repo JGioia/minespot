@@ -1,0 +1,25 @@
+@import '../variables.css';
+
+.box {
+  display: flex;
+}
+
+.margin-xsmall {
+  margin: var(--space-xsmall);
+}
+
+.margin-small {
+  margin: var(--space-small);
+}
+
+.margin-medium {
+  margin: var(--space-medium);
+}
+
+.margin-large {
+  margin: var(--space-large);
+}
+
+.margin-xlarge {
+  margin: var(--space-xlarge);
+}

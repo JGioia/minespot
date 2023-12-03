@@ -1,7 +1,8 @@
+@import '../variables.css';
 
 .button {
   appearance: button;
-  background-color: #1899D6;
+  background-color: var(--color-foreground-1);
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;
@@ -28,7 +29,7 @@
 
 .button:after {
   background-clip: padding-box;
-  background-color: #1CB0F6;
+  background-color: var(--color-foreground-2);
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;

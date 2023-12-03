@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './PageButton.css'
 import { IRootState } from '../redux/store';
 import { setPage } from '../redux/reducer';
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 
 type PageButtonProps = {
   direction: 'left' | 'right' | 'up' | 'down'
@@ -45,11 +45,32 @@ const PageButton = ({direction}: PageButtonProps) => {
     }
   }, [page, dispatch, direction]);
 
-  return (
-    <button className={`page-button ${direction}`} onClick={onClick}>
-      {direction}
-    </button>
-  )
+  const arrowEmoji = useMemo(() => {
+    switch (direction) {
+      case 'left':
+        return '←';//⬅️';
+      case 'right':
+        return '→'//➡️';
+      case 'up':
+        return '↑';//⬆️';
+      case 'down':
+        return '↓'//⬇️';
+    }
+  }, [direction]);
+
+  const showButton = useMemo(() => (
+    (page === 'harvest') ||
+    (page === 'craft' && direction === 'down') ||
+    (page === 'gamble' && direction === 'up') ||
+    (page === 'quest' && direction === 'right') ||
+    (page === 'stock' && direction === 'left')
+  ), [page, direction]);
+
+  return showButton ?(
+    <div className={`page-button page-button-${direction}`} onClick={onClick}>
+      {arrowEmoji}
+    </div>
+  ) : null
 };
 
 export default PageButton

@@ -12,3 +12,8 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
+.subpage {
+  justify-content: center;
+  align-items: center;
+}

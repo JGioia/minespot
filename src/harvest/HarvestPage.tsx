@@ -19,7 +19,7 @@ export const HarvestPage = () => {
 
   const clickCookie = useCallback(
     () => dispatch(setEarthCheese(earthCheese + 1)), 
-    [dispatch, money]
+    [dispatch, earthCheese]
   );
   const hireWorker = useCallback(() => {
     dispatch(setWorkers(workers + 1));

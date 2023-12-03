@@ -15,20 +15,25 @@ export const HarvestPage = () => {
   const dispatch = useDispatch();
 
   const nextWorkerCost = useMemo(() => (workers + 2) * 3, [workers]);
+  const hireWorkerDisabled = useMemo(() => nextWorkerCost > money, [nextWorkerCost, money]);
+  const sellCheeseDisabled = useMemo(() => earthCheese < 1, [earthCheese]);
   const sellCheesePrice = 2;
 
   const clickCookie = useCallback(
     () => dispatch(setEarthCheese(earthCheese + 1)), 
     [dispatch, earthCheese]
   );
+
   const hireWorker = useCallback(() => {
     dispatch(setWorkers(workers + 1));
     dispatch(setMoney(money - nextWorkerCost));
   }, [dispatch, workers, money, nextWorkerCost]);
+
   const sellCheese = useCallback(() => {
     dispatch(setMoney(money + earthCheese * sellCheesePrice));
     dispatch(setEarthCheese(0));
   }, [dispatch, money, earthCheese, sellCheesePrice]);
+
   const restartGame = useCallback(
     () => dispatch(resetState()),
     [dispatch]
@@ -38,12 +43,16 @@ export const HarvestPage = () => {
     <div className='harvest-page'>
       <Stack>
         <Button onClick={clickCookie}>🧀</Button>
-        <Button onClick={hireWorker}>Hire 🐀 - ${nextWorkerCost}</Button>
+        <Button onClick={hireWorker} disabled={hireWorkerDisabled}>
+          Hire 🐀 - ${nextWorkerCost}
+        </Button>
         <span>
           <span>workers: </span>
           <Quantity value={workers} />
         </span>
-        <Button onClick={sellCheese}>Sell 🧀 - ${sellCheesePrice} / cheese</Button>
+        <Button onClick={sellCheese} disabled={sellCheeseDisabled}>
+          Sell 🧀 - ${sellCheesePrice} / cheese
+        </Button>
         <Button onClick={restartGame}>Reset</Button>
       </Stack>
     </div>

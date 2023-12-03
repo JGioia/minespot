@@ -20,6 +20,11 @@
   align-items: center;
 }
 
+.page-button:hover {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
 .page-button-left {
   margin-top: calc(var(--half-height) - var(--half-page-button-height));
   border-top-right-radius: var(--space-small);

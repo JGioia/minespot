@@ -29,8 +29,8 @@
 
 .button:after {
   background-clip: padding-box;
-  background-color: var(--color-foreground-2);
   border: solid transparent;
+  background-color: var(--color-foreground-2);
   border-radius: 16px;
   border-width: 0 0 4px;
   bottom: -4px;
@@ -53,10 +53,12 @@
 }
 
 .button:disabled {
+  filter: brightness(0.5);
+  -webkit-filter: brightness(0.5);
   cursor: auto;
 }
 
-.button:active {
+.button:active:not(:disabled) {
   border-width: 4px 0 0;
   background: none;
 }

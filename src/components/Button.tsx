@@ -2,14 +2,16 @@ import { ReactNode } from "react"
 
 import "./Button.css";
 
-export const Button = (
-  {onClick, children}: 
-  {
+export const Button = ({
+  onClick,
+  disabled,
+  children
+}: {
     onClick?: () => void,
+    disabled?: boolean,
     children: ReactNode
-  }
-) => (
-  <div className="button" onClick={onClick}>
+}) => (
+  <button className="button" onClick={onClick} disabled={disabled}>
     {children}
-  </div>
+  </button>
 );

@@ -4,15 +4,15 @@ import "./Box.css";
 type Size = 'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
 
 export const Box = ({
-  margin = 'medium',
+  padding: padding = 'medium',
   className = '',
   children,
 }: {
-  margin?: Size
-  className?: string
-  children: ReactNode
+  padding?: Size;
+  className?: string;
+  children: ReactNode;
 }) => (
-  <div className={`box margin-${margin} ${className}`}>
+  <div className={`box padding-${padding} ${className}`}>
     {children}
   </div>
 );

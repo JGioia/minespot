@@ -1,0 +1,8 @@
+@import '../variables.css';
+
+.quest-page__card {
+  border: var(--border-size) solid var(--color-white-2);
+  border-radius: var(--border-radius-large);
+  background-color: var(--color-white-1);
+  color: var(--color-black);
+}

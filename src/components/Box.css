@@ -4,22 +4,22 @@
   display: flex;
 }
 
-.margin-xsmall {
-  margin: var(--space-xsmall);
+.padding-xsmall {
+  padding: var(--space-xsmall);
 }
 
-.margin-small {
-  margin: var(--space-small);
+.padding-small {
+  padding: var(--space-small);
 }
 
-.margin-medium {
-  margin: var(--space-medium);
+.padding-medium {
+  padding: var(--space-medium);
 }
 
-.margin-large {
-  margin: var(--space-large);
+.padding-large {
+  padding: var(--space-large);
 }
 
-.margin-xlarge {
-  margin: var(--space-xlarge);
+.padding-xlarge {
+  padding: var(--space-xlarge);
 }

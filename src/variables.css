@@ -13,10 +13,19 @@
   --space-large: calc(16 * var(--scaling-factor));
   --space-xlarge: calc(32 * var(--scaling-factor));
 
+  /* Miscellaneous size variables */
+  --border-radius-small: var(--space-small);
+  --border-radius-large: var(--space-medium);
+  --border-size: calc(1.5 * var(--scaling-factor));
+
   /* Colors */
   --color-background: #9C95DC;
   --color-foreground-0: #228CDB;
   --color-foreground-1: #1899D6;
   --color-foreground-2: #1CB0F6;
   --color-foreground-3: #0b5375;
+  --color-white-0: #FFFFFF;
+  --color-white-1: #D9DDDC;
+  --color-white-2: #AEADA8;
+  --color-black: #222021;
 }

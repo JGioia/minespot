@@ -4,7 +4,7 @@ import "./Box.css";
 type Size = 'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
 
 export const Box = ({
-  padding: padding = 'medium',
+  padding = 'medium',
   className = '',
   children,
 }: {

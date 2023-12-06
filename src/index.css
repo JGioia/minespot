@@ -16,10 +16,12 @@ button {
 }
 
 h1 {
+  text-shadow: 5px 5px var(--color-text-shadow);
   margin: 0;
 }
 
 h2 {
+  text-shadow: 2px 2px var(--color-text-shadow);
   margin: 0;
 }
 

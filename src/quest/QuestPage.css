@@ -1,14 +1,17 @@
 @import '../variables.css';
 
+.quest-page {
+  align-items: center;
+}
+
 .quest-page__card {
-  border: var(--border-size) solid var(--color-white-2);
+  border: var(--border-size-small) solid var(--color-white-2);
   border-radius: var(--border-radius-large);
   background-color: var(--color-white-1);
   color: var(--color-black);
   box-shadow: 0;
   transition: box-shadow 0.2s;
 }
-
 
 .quest-page__card:hover {
   box-shadow: -1px var(--space-small) var(--space-xsmall) var(--space-xsmall) var(--color-white-3);

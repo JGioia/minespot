@@ -16,4 +16,6 @@
 .subpage {
   justify-content: center;
   align-items: center;
+  padding-left: var(--space-xlarge);
+  padding-right: var(--space-xlarge);
 }

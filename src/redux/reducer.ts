@@ -10,6 +10,8 @@ const initialState = {
   curTime: 0, // in seconds
   tick: 0,
   page: ('harvest' as Page),
+  list1Quest: 0,
+  list2Quest: 0, 
 };
 
 export const reducerSlice = createSlice({
@@ -23,6 +25,8 @@ export const reducerSlice = createSlice({
       state.prevTime = initialState.prevTime;
       state.curTime = initialState.curTime;
       state.tick = initialState.tick;
+      state.list1Quest = initialState.list1Quest;
+      state.list2Quest = initialState.list2Quest;
     },
     setMoney: (state, action) => {
       state.money = action.payload;
@@ -42,7 +46,12 @@ export const reducerSlice = createSlice({
       state.curTime = state.curTime + deltaTime;
       state.tick += 1;
     },
-
+    incrementQuest1: (state) => {
+      state.list1Quest += 1;
+    },
+    incrementQuest2: (state) => {
+      state.list2Quest += 1;
+    }
   },
 });
 
@@ -53,7 +62,9 @@ export const {
   setWorkers, 
   incrementTime,
   setEarthCheese,
-  setPage
+  setPage,
+  incrementQuest1,
+  incrementQuest2
 } = reducerSlice.actions
 
 export default reducerSlice.reducer

@@ -18,11 +18,13 @@ button {
 h1 {
   text-shadow: 5px 5px var(--color-text-shadow);
   margin: 0;
+  letter-spacing: 1.5px;
 }
 
 h2 {
   text-shadow: 2px 2px var(--color-text-shadow);
   margin: 0;
+  letter-spacing: 0.6px;
 }
 
 h3 {

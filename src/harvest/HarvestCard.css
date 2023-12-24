@@ -1,0 +1,9 @@
+@import '../variables.css';
+
+.harvest-card {
+  /* border: var(--border-size-large) solid var(--color-white-2); */
+  border-radius: var(--border-radius-large);
+  background-color: var(--color-accent);
+  color: var(--color-black);
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+}

@@ -1,0 +1,59 @@
+{
+  "list1": [
+    {
+      "title": "Cheese Statue",
+      "description": "The new rat government has commissioned you to develop a cheese statue to please the people. Rat president, Jemeremiah Rat is facing low approval ratings and using desperate measures to regain the confidence of his populace.",
+      "requirement": {
+        "earthCheese": 1000
+      },
+      "onComplete": {
+        "money": 10000
+      }
+    },
+    {
+      "title": "Liftoff!",
+      "description": "Still struggling in the polls, Jeremiah Rat has decided to cave to populist beliefs and extract cheese from the moon. Environmental groups are calling this \"...a potential tragedy\" and \"..the worst thing since 9/11\". However that won't stop Jeremy. As a capitalist yourself, you decide to submit a bribe to become the private contractor mining cheese on the moon.",
+      "requirement": {
+        "money": 100000
+      },
+      "onComplete": {
+        "unlock": ["moon"]
+      }
+    },
+    {
+      "title": "Inner Harmony",
+      "description": "Exceeding the wealth of any previous individual in history, you are close to achieving inner peace and surpassing our mortal realm.",
+      "requirement": {
+        "earthCheese": 1000000,
+        "moonCheese": 1000000
+      },
+      "onComplete": {
+        "unlock": ["heaven"]
+      }
+    },
+    {
+      "title": "",
+      "description": "",
+      "requirement": {},
+      "onComplete": {}
+    }
+  ],
+  "list2": [
+    {
+      "title": "Cheese Statue",
+      "description": "The new rat government has commissioned you to develop a cheese statue to please the people. Rat president, Jemeremiah Rat is facing low approval ratings and using desperate measures to regain the confidence of his populace.",
+      "requirement": {
+        "earthCheese": 1000
+      },
+      "onComplete": {
+        "money": 10000
+      }
+    },
+    {
+      "title": "",
+      "description": "",
+      "requirement": {},
+      "onComplete": {}
+    }
+  ]
+}

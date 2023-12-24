@@ -16,14 +16,15 @@
   /* Miscellaneous size variables */
   --border-radius-small: var(--space-small);
   --border-radius-large: var(--space-medium);
-  --border-size: calc(1.5 * var(--scaling-factor));
+  --border-size-small: calc(1.5 * var(--scaling-factor));
+  --border-size-large: calc(3 * var(--scaling-factor));
 
   /* Colors */
-  --color-background: #9C95DC;
   --color-foreground-0: #228CDB;
   --color-foreground-1: #1899D6;
   --color-foreground-2: #1CB0F6;
   --color-foreground-3: #0b5375;
+  --color-accent: #9C95DC;
   --color-white-0: #FFFFFF;
   --color-white-1: #D9DDDC;
   --color-white-2: #AEADA8;

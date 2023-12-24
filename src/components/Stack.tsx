@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import "./Stack.css";
+import "./Layout.css";
 
 type Size = 'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
 

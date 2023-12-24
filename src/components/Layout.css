@@ -1,0 +1,55 @@
+@import '../variables.css';
+
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.box {
+  display: flex;
+}
+
+.inline {
+  display: flex;
+  flex-direction: row;
+}
+
+.gap-xsmall {
+  gap: var(--space-xsmall);
+}
+
+.gap-small {
+  gap: var(--space-small);
+}
+
+.gap-medium {
+  gap: var(--space-medium);
+}
+
+.gap-large {
+  gap: var(--space-large);
+}
+
+.gap-xlarge {
+  gap: var(--space-xlarge);
+}
+
+.padding-xsmall {
+  padding: var(--space-xsmall);
+}
+
+.padding-small {
+  padding: var(--space-small);
+}
+
+.padding-medium {
+  padding: var(--space-medium);
+}
+
+.padding-large {
+  padding: var(--space-large);
+}
+
+.padding-xlarge {
+  padding: var(--space-xlarge);
+}

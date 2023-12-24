@@ -7,6 +7,7 @@ import { Quantity } from '../components/Quantity';
 import { useCallback, useMemo } from 'react';
 import { Button } from '../components/Button';
 import { Stack } from '../components/Stack';
+import { HarvestCard } from './HarvestCard';
 
 export const HarvestPage = () => {
   const money = useSelector((state: IRootState) => state.money);
@@ -43,6 +44,7 @@ export const HarvestPage = () => {
     <div className='harvest-page'>
       <Stack>
         <Button onClick={clickCookie}>🧀</Button>
+        <HarvestCard />
         <Button onClick={hireWorker} disabled={hireWorkerDisabled}>
           Hire 🐀 - ${nextWorkerCost}
         </Button>

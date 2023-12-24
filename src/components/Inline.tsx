@@ -3,16 +3,16 @@ import "./Layout.css";
 
 type Size = 'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
 
-export const Box = ({
-  padding = 'medium',
+export const Inline = ({
+  gap = 'medium',
   className = '',
   children,
 }: {
-  padding?: Size;
+  gap?: Size;
   className?: string;
   children: ReactNode;
 }) => (
-  <div className={`box padding-${padding} ${className}`}>
+  <div className={`inline gap-${gap} ${className}`}>
     {children}
   </div>
 );

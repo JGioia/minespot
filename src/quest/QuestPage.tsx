@@ -66,7 +66,7 @@ const QuestCard = ({
     // @ts-expect-error: TS can't infer type
     ("money" in requirement && earthCheese < requirement.money)
     // TODO: add moon cheese
-  ), [requirement]);
+  ), [requirement, earthCheese]);
 
   const onCompleteAction = useCallback(() => {
     if ("money" in onComplete) {
@@ -76,13 +76,8 @@ const QuestCard = ({
     if ("unlock" in onComplete) {
       // TODO
     }
-    dispatch(incrementQuest1());
-    // if (questIndex === 1) {
-    //   dispatch(incrementQuest1());
-    // } else {
-    //   dispatch(incrementQuest2());
-    // }
-  }, [onComplete, dispatch]);
+    dispatch(questIndex === 1 ? incrementQuest1() : incrementQuest2());
+  }, [onComplete, dispatch, money, questIndex]);
 
   const showCard = useMemo(() => title !== "", [title]);
 

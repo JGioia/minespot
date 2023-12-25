@@ -7,7 +7,7 @@ import { Quantity } from '../components/Quantity';
 import { useCallback, useMemo } from 'react';
 import { Button } from '../components/Button';
 import { Stack } from '../components/Stack';
-import { HarvestCard } from './HarvestCard';
+import { Factories } from './Factories';
 
 export const HarvestPage = () => {
   const money = useSelector((state: IRootState) => state.money);
@@ -19,11 +19,6 @@ export const HarvestPage = () => {
   const hireWorkerDisabled = useMemo(() => nextWorkerCost > money, [nextWorkerCost, money]);
   const sellCheeseDisabled = useMemo(() => earthCheese < 1, [earthCheese]);
   const sellCheesePrice = 2;
-
-  const clickCookie = useCallback(
-    () => dispatch(setEarthCheese(earthCheese + 1)), 
-    [dispatch, earthCheese]
-  );
 
   const hireWorker = useCallback(() => {
     dispatch(setWorkers(workers + 1));
@@ -41,22 +36,19 @@ export const HarvestPage = () => {
   );
 
   return (
-    <div className='harvest-page'>
-      <Stack>
-        <Button onClick={clickCookie}>🧀</Button>
-        <HarvestCard />
-        <Button onClick={hireWorker} disabled={hireWorkerDisabled}>
-          Hire 🐀 - ${nextWorkerCost}
-        </Button>
-        <span>
-          <span>workers: </span>
-          <Quantity value={workers} />
-        </span>
-        <Button onClick={sellCheese} disabled={sellCheeseDisabled}>
-          Sell 🧀 - ${sellCheesePrice} / cheese
-        </Button>
-        <Button onClick={restartGame}>Reset</Button>
-      </Stack>
-    </div>
+    <Stack className='harvest-page'>
+      <Factories />
+      <Button onClick={hireWorker} disabled={hireWorkerDisabled}>
+        Hire 🐀 - ${nextWorkerCost}
+      </Button>
+      <span>
+        <span>workers: </span>
+        <Quantity value={workers} />
+      </span>
+      <Button onClick={sellCheese} disabled={sellCheeseDisabled}>
+        Sell 🧀 - ${sellCheesePrice} / cheese
+      </Button>
+      <Button onClick={restartGame}>Reset</Button>
+    </Stack>
   )
 };

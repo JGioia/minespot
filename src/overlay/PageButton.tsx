@@ -67,9 +67,9 @@ const PageButton = ({direction}: PageButtonProps) => {
   ), [page, direction]);
 
   return showButton ?(
-    <div className={`page-button page-button-${direction}`} onClick={onClick}>
+    <h3 className={`page-button page-button-${direction}`} onClick={onClick}>
       {arrowEmoji}
-    </div>
+    </h3>
   ) : null
 };
 

@@ -12,14 +12,14 @@ const TopBar = () => {
 
   return (
     <div className='top-bar'>
-      <span>
+      <h3>
         <Quantity value={money} />
         <span> 💵</span>
-      </span>
-      <span>
+      </h3>
+      <h3>
         <Quantity value={earthCheese} />
         <span> 🧀</span>
-      </span>
+      </h3>
     </div>
   )
 };

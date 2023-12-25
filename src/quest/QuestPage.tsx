@@ -11,6 +11,8 @@ import { useCallback, useMemo } from "react";
 import { incrementQuest1, incrementQuest2, setMoney } from "../redux/reducer";
 
 export const QuestPage = () => {
+  const questIndex1 = useSelector((state: IRootState) => state.list1Quest);
+  const questIndex2 = useSelector((state: IRootState) => state.list2Quest);
   return (
     <Stack className="quest-page" gap="large">
       <h1>QUESTS</h1>
@@ -20,7 +22,7 @@ export const QuestPage = () => {
         <QuestCard
           questList={2} />
       </Stack>
-      <h2>Quests Completed: 5</h2>
+      <h2>Quests Completed: {questIndex1 + questIndex2}</h2>
     </Stack>
   )
 };

@@ -14,6 +14,11 @@
   flex-direction: row;
 }
 
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
 .gap-xsmall {
   gap: var(--space-xsmall);
 }
